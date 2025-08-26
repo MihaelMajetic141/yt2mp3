@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./yt2mp3-spring
+      dockerfile: Dockerfile
+    container_name: yt2mp3-spring
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./yt2mp3-spring:/spring-app
+      - ./gradle-cache:/home/gradle/.gradle
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    networks:
+      - yt2mp3-net
+
+  frontend:
+    build: 
+      context: ./yt2mp3-angular
+      dockerfile: Dockerfile
+    container_name: yt2mp3-angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./yt2mp3-angular:/angular-app
+      - /angular-app/node_modules
+    command: npm run start -- --host 0.0.0.0 --poll 2000
+    networks:
+      - yt2mp3-net
+    depends_on:
+      - backend
+
+networks:
+  yt2mp3-net:
+    driver: bridge

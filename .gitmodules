@@ -1,0 +1,6 @@
+[submodule "yt2mp3-angular"]
+	path = yt2mp3-angular
+	url = https://github.com/MihaelMajetic141/yt2mp3-angular
+[submodule "yt2mp3-spring"]
+	path = yt2mp3-spring
+	url = https://github.com/MihaelMajetic141/yt2mp3-spring
