@@ -24,8 +24,8 @@ services:
     ports:
       - "4200:4200"
     volumes:
-      - ./yt2mp3-angular:/angular-app
       - /angular-app/node_modules
+      - ./yt2mp3-angular:/angular-app
     command: npm run start -- --host 0.0.0.0 --poll 2000
     networks:
       - yt2mp3-net
