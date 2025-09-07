@@ -56,3 +56,8 @@ Web application that converts YouTube videos to mp3 files.<br/>
 |  GET   | `/api/download/{id}`                                                      | Download mp3 file. `{id}` is generated after conversion.             |
 
 ---
+
+## Demo
+
+![Peek 2025-09-07 14-50](https://github.com/user-attachments/assets/fef74664-51ae-4cb3-a4af-fffcc74c3b4b)
+
